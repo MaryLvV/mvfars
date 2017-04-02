@@ -17,5 +17,8 @@ Imports:
     knitr,
     rmarkdown,
     testthat
+Depends: 
+    raster,
+    magrittr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1

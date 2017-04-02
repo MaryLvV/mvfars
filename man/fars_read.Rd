@@ -21,6 +21,6 @@ a data frame.
 A warning is given if the file does not exist.
 }
 \examples{
-fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "mvfars")
+fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "mvfars"))
 
 }

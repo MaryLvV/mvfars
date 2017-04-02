@@ -10,7 +10,7 @@
 #'
 #'@return This function returns a data frame.
 #'
-#'@examples fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "mvfars")
+#'@examples fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "mvfars"))
 #'
 #'@importFrom readr read_csv
 #'@importFrom dplyr tbl_df
