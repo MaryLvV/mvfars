@@ -8,7 +8,7 @@
 #'
 #'@note A warning is given if the file does not exist.
 #'
-#'@param return This function returns a data frame.
+#'@return This function returns a data frame.
 #'
 #'@examples fars_read("data/accident_2013.csv.bz2")
 #'
@@ -19,7 +19,7 @@
 
 fars_read <- function(filename) {
     if(!file.exists(filename))
-        stop("file '", filename, "' does not exist")
+        stop("file ", filename, " does not exist")
     data <- suppressMessages({
         readr::read_csv(filename, progress = FALSE)
     })
@@ -33,7 +33,7 @@ fars_read <- function(filename) {
 #'
 #'@param year A 4-digit year (integer or character string)
 #'
-#'@param return This function returns a character string with the file name.
+#'@return This function returns a character string with the file name.
 #'
 #'@examples make_filename(2017)
 #'
@@ -90,7 +90,7 @@ fars_read_years <- function(years) {
 #'
 #'@param years A vector of the years for which we want to get data.
 #'
-#'@param return This function returns a summary data frame.
+#'@return This function returns a summary data frame.
 #'
 #'@examples fars_summarize_years(c('2013', '2014', '2015'))
 #'

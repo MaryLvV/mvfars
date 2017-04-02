@@ -8,8 +8,9 @@ make_filename(year)
 }
 \arguments{
 \item{year}{A 4-digit year (integer or character string)}
-
-\item{return}{This function returns a character string with the file name.}
+}
+\value{
+This function returns a character string with the file name.
 }
 \description{
 This function takes a 4-digit year as input and returns a filename

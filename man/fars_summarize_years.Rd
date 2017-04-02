@@ -8,8 +8,9 @@ fars_summarize_years(years)
 }
 \arguments{
 \item{years}{A vector of the years for which we want to get data.}
-
-\item{return}{This function returns a summary data frame.}
+}
+\value{
+This function returns a summary data frame.
 }
 \description{
 This function takes a list of years, passes them to the

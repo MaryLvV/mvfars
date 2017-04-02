@@ -9,8 +9,9 @@ fars_read(filename)
 \arguments{
 \item{filename}{A character string that gives the name of the file
 to be read.}
-
-\item{return}{This function returns a data frame.}
+}
+\value{
+This function returns a data frame.
 }
 \description{
 This function reads the csv file into the local environment and returns
