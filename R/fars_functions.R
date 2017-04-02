@@ -107,44 +107,44 @@ fars_summarize_years <- function(years) {
         dplyr::summarize(n = n()) %>%
         tidyr::spread(year, n)
 }
-
-#'Plot the Fatality Analysis Reporting System data for
-#'a particular state and year on a map of that state
 #'
-#'This function creates a map of a given state and plots accident data
-#'on the map by location
+#' #'Plot the Fatality Analysis Reporting System data for
+#' #'a particular state and year on a map of that state
+#' #'
+#' #'This function creates a map of a given state and plots accident data
+#' #'on the map by location
+#' #'
+#' #'@param state.num a numeric value assigned to a state
+#' #'@param year a 4-digit year (integer or character string)
+#' #'
+#' #'@note throws an error if an invalid state number is given
+#' #'@note retruns a message if accidents for thae state and year given is 0
+#' #'
+#' #'@examples fars_map_state(47, 2013)  #fatal accidents in TN for 2013
+#' #'
+#' #'@importFrom dplyr filter
+#' #'@importFrom maps map
+#' #'@importFrom graphics points
+#' #'
+#' #'@export
 #'
-#'@param state.num a numeric value assigned to a state
-#'@param year a 4-digit year (integer or character string)
+#' fars_map_state <- function(state.num, year) {
+#'     filename <- make_filename(year)
+#'     data <- fars_read(filename)
+#'     state.num <- as.integer(state.num)
 #'
-#'@note throws an error if an invalid state number is given
-#'@note retruns a message if accidents for thae state and year given is 0
-#'
-#'@examples fars_map_state(47, 2013)  #fatal accidents in TN for 2013
-#'
-#'@importFrom dplyr filter
-#'@importFrom maps map
-#'@importFrom graphics points
-#'
-#'@export
-
-fars_map_state <- function(state.num, year) {
-    filename <- make_filename(year)
-    data <- fars_read(filename)
-    state.num <- as.integer(state.num)
-
-    if(!(state.num %in% unique(data$STATE)))
-        stop("invalid STATE number: ", state.num)
-    data.sub <- dplyr::filter(data, STATE == state.num)
-    if(nrow(data.sub) == 0L) {
-        message("no accidents to plot")
-        return(invisible(NULL))
-    }
-    is.na(data.sub$LONGITUD) <- data.sub$LONGITUD > 900
-    is.na(data.sub$LATITUDE) <- data.sub$LATITUDE > 90
-    with(data.sub, {
-        maps::map("state", ylim = range(LATITUDE, na.rm = TRUE),
-                  xlim = range(LONGITUD, na.rm = TRUE))
-        graphics::points(LONGITUD, LATITUDE, pch = 46)
-    })
-}
+#'     if(!(state.num %in% unique(data$STATE)))
+#'         stop("invalid STATE number: ", state.num)
+#'     data.sub <- dplyr::filter(data, STATE == state.num)
+#'     if(nrow(data.sub) == 0L) {
+#'         message("no accidents to plot")
+#'         return(invisible(NULL))
+#'     }
+#'     is.na(data.sub$LONGITUD) <- data.sub$LONGITUD > 900
+#'     is.na(data.sub$LATITUDE) <- data.sub$LATITUDE > 90
+#'     with(data.sub, {
+#'         maps::map("state", ylim = range(LATITUDE, na.rm = TRUE),
+#'                   xlim = range(LONGITUD, na.rm = TRUE))
+#'         graphics::points(LONGITUD, LATITUDE, pch = 46)
+#'     })
+#' }
