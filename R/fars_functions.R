@@ -10,7 +10,7 @@
 #'
 #'@return This function returns a data frame.
 #'
-#'@examples fars_read("data/accident_2013.csv.bz2")
+#'@examples fars_read("../../inst/extdata/accident_2013.csv.bz2")
 #'
 #'@importFrom readr read_csv
 #'@importFrom dplyr tbl_df
@@ -41,7 +41,7 @@ fars_read <- function(filename) {
 
 make_filename <- function(year) {
     year <- as.integer(year)
-    sprintf("accident_%d.csv.bz2", year)
+    sprintf("../../inst/extdata/accident_%d.csv.bz2", year)
 }
 
 #'Read Data For a List of Years
