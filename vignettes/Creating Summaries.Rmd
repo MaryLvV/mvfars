@@ -1,0 +1,31 @@
+---
+title: "Creating Summaries"
+author: "Mary van Valkenburg"
+date: "04-01-2017"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Creating summaries from the Fatality Analysis Reporting System (FARS) data in
+mvfars is done by calling fars_summarize_years() and passing it a single year 
+or a vector of years:
+
+```{r eval = FALSE}
+fars_summarize_years(2013)
+#returns a data frame with total fatalities for each month of 2013
+
+fars_summarize_years(c(2013, 2014, 2015))
+#returns a data frame with total fatalities for each month of 2013, 2014, and 2015
+
+```
+
+
+## Vignette Info
+
+The fars_summarize_years() function reads the corresponding data file for
+each year listed, grouping by month and year, and totaling fatalities for 
+each month of each year.
+
