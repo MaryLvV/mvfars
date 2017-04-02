@@ -13,8 +13,8 @@ Imports:
     dplyr,
     tidyr,
     maps,
-    graphics
-Suggests: knitr,
+    graphics,
+    knitr,
     rmarkdown,
     testthat
 VignetteBuilder: knitr
