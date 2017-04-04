@@ -16,8 +16,7 @@ Imports:
     graphics,
     knitr,
     rmarkdown,
-    testthat
-Depends: 
+    testthat,
     raster,
     magrittr
 VignetteBuilder: knitr
