@@ -35,7 +35,7 @@ fars_read <- function(filename) {
 #'
 #'@return This function returns a character string with the file name.
 #'
-#'@examples make_filename(2017)
+#'@examples make_filename(2013)
 #'
 #'@export
 
@@ -63,6 +63,7 @@ make_filename <- function(year) {
 #'@examples fars_read_years(c('2013', '2014', '2015'))
 #'
 #'@importFrom dplyr mutate select
+#'@import magrittr
 #'
 #'@export
 
@@ -97,6 +98,7 @@ fars_read_years <- function(years) {
 #'
 #'@importFrom dplyr bind_rows group_by summarize
 #'@importFrom tidyr spread
+#'@import magrittr
 #'
 #'@export
 

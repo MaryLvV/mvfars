@@ -17,6 +17,6 @@ This function takes a 4-digit year as input and returns a filename
 in the form 'accident_YEAR.csv.bz2'.
 }
 \examples{
-make_filename(2017)
+make_filename(2013)
 
 }

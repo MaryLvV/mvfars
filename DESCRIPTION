@@ -12,12 +12,10 @@ Imports:
     readr,
     dplyr,
     tidyr,
-    maps,
     graphics,
     knitr,
     rmarkdown,
     testthat,
-    raster,
     magrittr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
